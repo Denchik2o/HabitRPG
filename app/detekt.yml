@@ -1,0 +1,18 @@
+config:
+  active: true
+  auto-correct: false
+
+complexity:
+  active: true
+  LongMethod:
+    active: true
+    threshold: 30
+  LongParameterList:
+    active: true
+    threshold: 6
+
+style:
+  active: true
+  MagicNumber:
+    active: true
+    threshold: 3
