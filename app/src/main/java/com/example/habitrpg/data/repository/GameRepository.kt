@@ -436,25 +436,3 @@ class GameRepository(
         return updatedCharacter
     }
 }
-
-private fun Character.checkLevelUp(): Character {
-    var currentCharacter = this
-    var remainingExp = currentCharacter.exp
-
-    while (remainingExp >= currentCharacter.getExpForNextLevel()) {
-        val expNeeded = currentCharacter.getExpForNextLevel()
-        remainingExp -= expNeeded
-
-        currentCharacter = currentCharacter.copy(
-            level = currentCharacter.level + 1,
-            exp = remainingExp,
-            maxHp = currentCharacter.maxHp + 10,
-            currentHp = currentCharacter.maxHp + 10,
-            maxMp = currentCharacter.maxMp + 5,
-            currentMp = currentCharacter.maxMp + 5,
-            attack = currentCharacter.attack + 1,
-            defense = currentCharacter.defense + 1
-        )
-    }
-    return currentCharacter
-}
